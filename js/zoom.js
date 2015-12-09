@@ -18,20 +18,15 @@ myApp.controller('myCtrl', function($scope, $http) {
                         sum = sum.concat(response2.results);
                         sum = sum.concat(response3.results);
                         sum = sum.concat(response4.results);
-<<<<<<< HEAD
                         console.log(sum);
-=======
->>>>>>> finished
 
                         //case where no results are found
                         if (sum == "") {
                             $scope.selected = "No results found"
                         } else {
                             $scope.selected = $scope.usrSearch
-<<<<<<< HEAD
-=======
+
                             //sends search results to build heirarchy function
->>>>>>> finished
                             root = $scope.bubbles = buildHierarchy(sum) 
                             console.log(root)
                         }
@@ -138,12 +133,8 @@ var myDir = myApp.directive("bubbleChart", function($window) {
             .attr("height", diameter)
             .append("g")
                 .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
-
-<<<<<<< HEAD
-
-=======
+       
         //Puts circles on the screen based off of information found in data
->>>>>>> finished
         var draw = function() {     
             // Make a copy of your data, stored in an object {children:FILTERED-DATA}
             scope.filteredData = angular.copy(scope.root)//filtered)}
@@ -175,10 +166,7 @@ var myDir = myApp.directive("bubbleChart", function($window) {
             //solution to solve second search glitch
             svg.selectAll("text").remove();
 
-<<<<<<< HEAD
-=======
             //Displays information about the results (labels of categories and titles of articles)
->>>>>>> finished
             var text = svg.selectAll("text")
                     .data(nodes);
 
@@ -188,10 +176,8 @@ var myDir = myApp.directive("bubbleChart", function($window) {
                     //Sets labels to half opacity and titles to full opacity
                     .style("opacity", function(d) { return d.parent === scope.filteredData ? 0.5 : 1; })
                     .style("display", function(d) { return d.parent === scope.filteredData ? "block" : "none"; })
-<<<<<<< HEAD
-=======
+
                     //Makes label and title size pretty big and keeps labels with one child relatively small
->>>>>>> finished
                     .style("font-size", function(d) { return (d.children !== undefined && d.children.length == 1) ? 10 : 30; })      
                     .text(function(d) { return d.title});
             
